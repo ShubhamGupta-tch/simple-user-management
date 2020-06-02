@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block title %}Local Una{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/css/login.css' %}">
+<img src="{% static 'users/images/wave.png' %}" class="wave">
+
+<div class="container">
+    <div class="img">
+        <img src="{% static 'users/images/phone.svg' %}">
+    </div>
+
+    <div class="login-container">
+        <form action="{% url 'users:login' %}" method="post" autocomplete="off">
+            <img src="{% static 'users/images/avatar.svg' %}" class="avatar">
+            <h2>Welcome</h2>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn" value="LOGIN">
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'users/js/login.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,51 @@
+.users{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em 20%;
+    justify-content: space-around;
+}
+
+.profile_img{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 1em auto;
+    border: 3px #5cdb94 solid;
+    padding: 0.5em;
+    border-radius: 100000000px;
+}
+
+.user{
+    margin: 1em 1em;
+    border: 2px #5cdb94 solid;
+    min-width: 350px;
+    padding: 2em 0em;
+    transition: 0.2s;
+}
+
+.user:hover{
+    box-shadow: 0 0 0.7em #5cdb94;
+}
+
+.users a:link{
+    text-decoration: none;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    color: #5cdb94;
+    text-align: center;
+    text-decoration: none;
+}
+
+p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #333;
+}
+
+h1.main{
+    color: #333;
+    font-size: 3.5em;
+}

@@ -1,0 +1,148 @@
+body{
+    font-family: 'poppins', sans-serif;
+}
+
+.wave{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: -1;
+    transform: rotateY(180deg);
+}
+
+.container{
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+}
+
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.img img{
+    width: 450px;
+}
+
+.register-container{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+form{
+    width: 360px;
+}
+
+.avatar{
+    width: 100px;
+}
+
+label{
+    display: none;
+}
+
+form h2{
+    font-size: 2.9rem;
+    text-transform: uppercase;
+    margin: 7px 0;
+    color: #333;
+}
+
+form ul{
+    display: none;
+}
+
+.helptext{
+    display: none;
+}
+
+
+#id_username, #id_password1, #id_password2, #id_email, #id_first_name, #id_last_name{
+    margin: 0.2em;
+    width: 80%;
+    padding: 0.4em 1em;
+    background: none;
+    border: 2px #5cdb94 solid;
+    border-radius: 25px;
+    outline: none;
+    font-size: 17px;
+}
+
+.btn{
+    text-transform: uppercase;
+    width: 50%;
+    padding: 0.5em 1em;
+    background: #5cdb94;
+    color: #fff;
+    border: 2px #3dac6c solid;
+    cursor: pointer;
+    border-radius: 25px;
+    margin: 0.5em;
+    font-size: 18px;
+    transition: 0.2s;
+    outline: none;
+}
+
+.btn:hover{
+    color: #3dac6c;
+    background: none;
+}
+
+.errorlist{
+    display: block;
+    list-style: none;
+    margin: 7px 0px;
+    width: 100%;
+    background: rgba(224, 67, 67, 0.9);
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 1050px) {
+    .container{
+        grid-gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    form{
+        width: 290px;
+    }
+
+    form h2{
+        font-size: 2.4rem;
+        margin: 8px 0;
+    }
+
+    .img img{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .img{
+        display: none;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .wave{
+        display: none;
+    }
+
+    .register-container{
+        justify-content: center;
+    }
+}

@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block title %}{{u.username}}'s Profile{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/css/profile.css' %}">
+<div class="profile">
+<img src="{{u.profile.image.url}}" alt="{{u.username}} Profile Picture" class="profile_pic">
+<h1>{{ u.first_name }} {{u.last_name}}</h1>
+<p>Username: {{u.username}}</p>
+<p>Email: {{ u.email }}</p>
+</div>
+<style type="text/css">
+
+.profile a{
+    margin: 1em 50%;
+}
+
+.profile p{
+    margin: 0.5em;
+    text-align: center;
+}
+
+.btn{
+    margin: 1em 0em;
+}
+</style>
+<script type="text/javascript" src="{% static 'users/js/profile.js' %}"></script>
+{% endblock %}

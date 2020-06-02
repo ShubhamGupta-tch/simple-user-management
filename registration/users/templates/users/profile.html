@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block title %}{{user.username}}'s Profile{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/css/profile.css' %}">
+<div class="profile">
+<img src="{{user.profile.image.url}}" alt="{{user.username}} Profile Picture" class="profile_pic">
+<h1>{{ user.first_name }} {{user.last_name}}</h1>
+<p>Username: {{user.username}}</p>
+<p>Email: {{ user.email }}</p>
+<a href="{% url 'users:profile_update' %}"><button class="btn rounded">Update Profile</button></a>
+</div>
+<style type="text/css">
+.profile a{
+    margin: 1em 50%;
+}
+
+.profile p{
+    margin: 0.5em;
+    text-align: center;
+}
+
+.btn{
+    margin: 1em 0em;
+}
+</style>
+<script type="text/javascript" src="{% static 'users/js/profile.js' %}"></script>
+{% endblock %}

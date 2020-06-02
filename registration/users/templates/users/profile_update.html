@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block title %}{{user.username}}'s Profile Update{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/css/profile.css' %}">
+<h1>Update Profile</h1>
+<div class="form">
+<form method="POST"  enctype="multipart/form-data">
+    {% csrf_token %}
+    {{u_form.as_p}}
+    {{p_form.as_p}}
+
+    <button class="btn rounded" type="submit">Update</button>
+</form>
+</div>
+<style type="text/css">
+    .btn{
+        padding: 0.5em 2em;
+    }
+    h1{
+        font-family: 'Poppins', sans-serif;
+        font-size: 3em;
+        text-align: center;
+        color: #333;
+    }
+</style>
+<script type="text/javascript" src="{% static 'users/js/profile.js' %}"></script>
+{% endblock %}

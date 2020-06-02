@@ -1,0 +1,101 @@
+
+{% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success'%}
+                <div class="success message">{{message}}</div>
+            {% elif message.tags == 'info'%}
+                <div class="info message">{{message}}</div>
+            {% elif message.tags == 'warning'%}
+                <div class="warning message">{{message}}</div>
+            {% elif message.tags == 'error'%}
+                <div class="error message">{{message}}</div>
+            {% endif %}
+        {% endfor %}
+{% endif %}
+
+<style type="text/css">
+
+    div.message{
+        font-family: 'Poppins', sans-serif;
+        padding: 1em 1.5em;
+        position: fixed;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        top: 10.5vh;
+        max-width: 400px;
+        min-width: 200px;
+        height: auto;
+        background: rgba(50, 50, 50, 0.8);
+        opacity: 1;
+        color: white;
+        display: flex;
+        justify-content: center;
+        font-size: 1.2em;
+        animation: show 5s ease-in-out forwards;
+        cursor: context-menu;
+        z-index: 10000;
+        border-radius: 3px;
+    }
+
+    div.message:hover{
+        animation-play-state: paused;
+    }
+
+    div.message:not(:hover){
+        animation-play-state: running;
+    }
+
+    div.error{
+        background: rgba(224, 67, 67, 0.9);
+    }
+
+    div.success{
+        background: rgba(55, 163, 102, 0.9);
+    }
+
+    div.warning{
+        background: rgba(240, 179, 29, 0.9);
+    }
+
+    div.rounded{
+        border-radius: 100px;
+    }
+
+    @keyframes show{
+        0%{
+            opacity: 0;
+            transform: translateY(-150%) translateX(-50%);
+        }
+
+        10%{
+            opacity: 0;
+            transform: translateY(-80%) translateX(-50%);
+        }
+
+        20%{
+            opacity: 1;
+            transform: translateY(0%) translateX(-50%);
+        }
+
+        80%{
+            opacity: 1;
+            transform: translateY(0%) translateX(-50%);
+        }
+
+        90%{
+            opacity: 0;
+            transform: translateY(-80%) translateX(-50%);
+        }
+
+        100%{
+            opacity: 0;
+            transform: translateY(-150%) translateX(-50%);
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        div.message{
+            max-width: 90%;
+        }
+    }
+</style>

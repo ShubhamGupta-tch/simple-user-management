@@ -1,0 +1,58 @@
+.profile{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.profile_pic{
+    width: 200px;
+    display: block;
+    margin: 1em auto;
+    border-radius: 100000000px;
+}
+
+h1{
+    text-align: center;
+    color: #333;
+    /* display: block; */
+}
+
+
+label{
+    display: none;
+}
+
+.helptext{
+    display: none;
+}
+
+
+form{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    width: 50vw;
+    margin: 1em auto;
+    z-index: 1;
+}
+
+input{
+    font-size: 18px;
+    border: 2px #5cdb94 solid;
+    border-radius: 50px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    margin: 0.5em 0em;
+    width: 100%;
+    padding: 0.5em 1.5em;
+}
+
+.btn{
+    margin: 0.5em 50%;
+    transform: translateX(-50%);
+    outline: none;
+}
+
+@media screen and (max-width: 689px){
+    form{
+        width: 90vw;
+    }
+}

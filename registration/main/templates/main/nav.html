@@ -1,0 +1,25 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/css/nav.css' %}">
+
+<header>
+<nav>
+    <div class="hamburger">
+        <div class="line l1"></div>
+        <div class="line l2"></div>
+        <div class="line l3"></div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'main:home' %}">Home</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'users:profile' %}">Profile</a></li>
+            <li><a href="{% url 'users:logout' %}">Log Out</a></li>
+        {% else %}
+            <li><a href="{% url 'users:login' %}">Login</a></li>
+            <li><a href="{% url 'users:register' %}">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>
+</header>
+
+<script type="text/javascript" src="{% static 'main/js/nav.js' %}"></script>

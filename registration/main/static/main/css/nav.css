@@ -1,0 +1,118 @@
+header{
+    position: sticky;
+    top: 0px;
+}
+
+nav{
+    position: relative;
+    height: 10vh;
+    background: #2dd398;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    z-index: 100;
+    width: 100%;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: #053868;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.nav-links li a:hover{
+    color: #edf5e1;
+}
+
+@media screen and (max-width: 768px){
+    .line{
+        width: 20px;
+        height: 2px;
+        background: #053868;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .toggle .l1{
+        transform: rotateZ(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .l2{
+        opacity: 0;
+    }
+
+    .toggle .l3{
+        transform: rotateZ(45deg) translate(-5px, -6px);
+    }
+
+
+    nav{
+        position: relative;
+        width: 100%;
+    }
+
+    .hamburger{
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 6;
+        cursor: pointer;
+    }
+
+    .nav-links{
+        display: fixed;
+        background: #2dd398;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -20%);
+        -webkit-clip-path: circle(100px at 90% -20%);
+        transition: all 1s ease-out;
+    }
+
+    .nav-links li{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    @keyframes NavlinkFadeIn{
+        from{
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes NavlinkFadeOut{
+        from{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        to{
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+    }
+
+    .nav-links.open{
+        clip-path: circle(1500px at 90% -20%);
+        -webkit-clip-path: circle(1500px at 90% -20%);
+        transition: all 1s ease-out;
+    }
+}

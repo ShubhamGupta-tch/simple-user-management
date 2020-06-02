@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.btn{
+    font-family: 'Poppins', sans-serif;
+    padding: 0.5em 1.5em;
+    background: #5cdb94;
+    color: #fff;
+    border-radius: 3px;
+    border: 2px #3dac6c solid;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
+    margin: 0.5em;
+    outline: none;
+}
+
+.btn:hover{
+    background: none;
+    color: #3dac6c;
+}
+
+.rounded{
+    border-radius: 25px;
+}
