@@ -2,7 +2,7 @@
 
 This is a website that manages Users, their Profiles and Allows them to view others Profile as well.<br>
 <br>
-##Underlying Principles:
+## Underlying Principles:
 - CRUD
 - Password Management
 - Authentication
